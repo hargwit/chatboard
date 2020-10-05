@@ -1,6 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 
+import routes from '../api/index.js'
+
 export default (app) => {
   /*
    * Health Check endpoints
@@ -19,6 +21,9 @@ export default (app) => {
 
   // Middleware that transforms the raw string of req.body into json
   app.use(express.json())
+
+  // Set up routes
+  app.use(process.env.API_PREFIX, routes())
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
