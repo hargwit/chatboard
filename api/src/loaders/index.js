@@ -1,9 +1,11 @@
-import Logger from './logger.js'
 import server from './server.js'
+import session from './session.js'
+import logger from './logger.js'
 
 function load(app) {
-  Logger.info('loading server')
   server(app)
+  session(app)
+  logger(app)
 }
 
 export default load

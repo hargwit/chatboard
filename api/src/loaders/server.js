@@ -1,5 +1,5 @@
+import express from 'express'
 import cors from 'cors'
-import bodyParser from 'body-parser'
 
 export default (app) => {
   /*
@@ -18,7 +18,7 @@ export default (app) => {
   app.use(cors())
 
   // Middleware that transforms the raw string of req.body into json
-  app.use(bodyParser.json())
+  app.use(express.json())
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
