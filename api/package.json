@@ -1,0 +1,37 @@
+{
+  "name": "chatboard-api",
+  "version": "1.0.0",
+  "description": "The API for chatboard.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hargwit/chatboard.git"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "react",
+    "node",
+    "mongo",
+    "express",
+    "MERN"
+  ],
+  "author": "Harry G Withers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hargwit/chatboard/issues"
+  },
+  "homepage": "https://github.com/hargwit/chatboard#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
