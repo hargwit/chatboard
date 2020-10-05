@@ -1,6 +1,6 @@
 {
   "name": "chatboard",
-  "image": "node:lts-buster",
+  "image": "node:14.12-buster",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
