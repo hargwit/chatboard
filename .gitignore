@@ -4,8 +4,8 @@ node_modules
 # Editor settings
 .vscode
 
-# config
-config.json
+# config and env files
+.env
 
 # log files
 *.log

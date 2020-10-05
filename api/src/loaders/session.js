@@ -1,4 +1,4 @@
-import cookieParser from 'cookieParser'
+import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import passport from 'passport'
 
@@ -9,6 +9,7 @@ export default (app) => {
   // Middleware to cache sessions
   app.use(
     session({
+      secret: process.env.SECRET,
       resave: false,
       saveUninitialized: true,
       cookie: {
