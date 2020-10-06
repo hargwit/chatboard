@@ -10,10 +10,10 @@ function startServer() {
 
   loaders(app)
 
-  app.listen(3001, () => {
+  app.listen(process.env.PORT, () => {
     console.log(`
             ###########################################
-                   Server listening on port 3001
+                   Server listening on port ${process.env.PORT}
             ###########################################
         `)
   })
