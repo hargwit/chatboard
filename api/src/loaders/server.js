@@ -22,8 +22,17 @@ export default (app) => {
   // Middleware that transforms the raw string of req.body into json
   app.use(express.json())
 
+  // Add auth middleware, only /login is not checked
+  app.use(async (req, res, next) => {
+    if (req.url.includes('/login') || req.isAuthenticated()) {
+      return next()
+    } else {
+      return res.status(401).end(`User is not logged in.`)
+    }
+  })
+
   // Set up routes
-  app.use(process.env.API_PREFIX, routes())
+  app.use('/', routes())
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {

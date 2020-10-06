@@ -1,11 +1,19 @@
 import express from 'express'
 
-import people from './people.js'
+import auth from './auth.js'
 
 export default () => {
   const app = express.Router()
 
-  people(app)
+  app.get('/', (req, res) => {
+    res.status(200).json({ foo: 'bar' }).end()
+  })
+
+  auth(app)
+
+  app.get('/foo', (req, res) => {
+    res.status(200).json({ bar: 'foo' }).end()
+  })
 
   return app
 }
