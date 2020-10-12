@@ -1,9 +1,17 @@
 import express from 'express'
 
-const router = express.Router()
+import chatsAPI from './chats.js'
 
-router.get('/', (req, res) => {
-  res.send('<p>some html</p>')
-})
+function configure(dependencyContainer) {
+  const router = express.Router()
 
-export default router
+  router.get('/', (req, res) => {
+    res.send('<p>some html</p>')
+  })
+
+  router.use('/chats', chatsAPI(dependencyContainer.resolve('chatsHandler')))
+
+  return router
+}
+
+export default configure

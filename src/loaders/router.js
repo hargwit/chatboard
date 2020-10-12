@@ -1,5 +1,5 @@
-import router from '../api/index.js'
+import configureRouter from '../api/index.js'
 
-export default (app) => {
-  app.use(process.env.API_ROUTE, router)
+export default (app, dependencies) => {
+  app.use(process.env.API_ROUTE, configureRouter(dependencies))
 }

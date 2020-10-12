@@ -1,0 +1,12 @@
+People
+- login
+- logout
+
+Chatboard
+- CRUD chatboards
+
+Chat
+- CRUD message
+
+Board
+- CRUD note
