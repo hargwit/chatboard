@@ -1,6 +1,6 @@
 import awilix from 'awilix'
 
-import chatsHandler from '../handlers/chats.js'
+import chatsHandler from '../modules/chats/controller.js'
 import chatsService from '../modules/chats/service.js'
 
 export default () => {
