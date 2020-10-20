@@ -7,3 +7,5 @@ export type Chat = {
   people: People
   messages: Messages
 }
+
+export type Chats = Array<Chat>

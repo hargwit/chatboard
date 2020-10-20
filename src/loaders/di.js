@@ -1,7 +1,7 @@
 import awilix from 'awilix'
 
-import chatsHandler from '../modules/chats/controller.js'
-import chatsService from '../modules/chats/service.js'
+import { chatHandler } from '../modules/chats/controller'
+import { chatService } from '../modules/chats/service'
 
 export default () => {
   const container = awilix.createContainer({
@@ -9,8 +9,8 @@ export default () => {
   })
 
   container.register({
-    chatsHandler: awilix.asFunction(chatsHandler),
-    chatsService: awilix.asFunction(chatsService),
+    chatsHandler: awilix.asFunction(chatHandler),
+    chatsService: awilix.asFunction(chatService),
   })
 
   return container
