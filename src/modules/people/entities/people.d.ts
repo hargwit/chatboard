@@ -1,5 +1,5 @@
 export type Person = {
-  id: string
+  uuid: string
   email: string
   lastLogin: Date
 }

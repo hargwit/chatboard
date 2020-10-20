@@ -1,7 +1,7 @@
 import { Person } from '../../people/entities/people'
 
 export type Note = {
-  id: string
+  uuid: string
   body: string
   sentBy: Person
   sentAt: Date

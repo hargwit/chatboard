@@ -1,18 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import mongoose from 'mongoose'
-import { ChatRepository } from './repository'
 import { Chat } from '../entities/chat'
+import { ChatRepository } from './repository'
 import { chatFactory } from '../entities/factories'
-import { doc } from '../../../infra/mongo/result-mapper'
 import { map } from '../../../helpers/map'
+
+interface chatDTO extends mongoose.Document, Chat {}
 
 /**
  * A mongo implementation of a chat repository
  */
-const chatRepository = (
-  model: mongoose.Model<mongoose.Document>,
-): ChatRepository => ({
-  getAll: () => model.find().then(map(doc)).then(map<any, Chat>(chatFactory)),
+const chatRepository = (model: mongoose.Model<chatDTO>): ChatRepository => ({
+  getAll: () => model.find().then(map(chatFactory)),
 })
 
 export { chatRepository }
