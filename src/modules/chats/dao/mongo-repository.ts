@@ -5,6 +5,7 @@ import { ChatRepository } from './repository'
 import { chatFactory } from '../entities/factories'
 import { map } from '../../../helpers/map'
 
+// a data transfer object specific to the mongo implementation, this should NOT be exported
 interface chatDTO extends mongoose.Document, Chat {}
 
 /**
