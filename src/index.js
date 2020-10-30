@@ -6,12 +6,12 @@ import loaders from './loaders/index.js'
 // Load the process variables
 dotenv.config()
 
-function startServer() {
+async function startServer() {
   // Build an express app
   const app = express()
 
   // Load the application
-  loaders(app)
+  await loaders(app)
 
   // Start the server
   app.listen(process.env.PORT, () => {
@@ -23,5 +23,5 @@ function startServer() {
   })
 }
 
-// lets go!
-startServer()
+// Allons-y!
+await startServer()

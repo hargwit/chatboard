@@ -1,7 +1,8 @@
 /**
- * @param {import("../app/use-cases").ChatUseCases} chatService contains all of the chat use cases
+ * @param {Object} args
+ * @param {import("../app/use-cases").ChatUseCases} args.chatService contains all of the chat use cases
  */
-function chatHandler(chatService) {
+function chatHandler({ chatService }) {
   return {
     getAll: (req, res) => {
       return res.send(chatService.getAll())
