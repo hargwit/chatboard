@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 
-import loaders from './loaders/index.js'
+import loaders from './infrastructure/loaders'
 
 // Load the process variables
 dotenv.config()

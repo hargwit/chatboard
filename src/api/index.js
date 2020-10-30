@@ -2,14 +2,25 @@ import express from 'express'
 
 import chatsAPI from './chats.js'
 
+/**
+ * Configures the router for the root api.
+ *
+ * @param {import('awilix').AwilixContainer} dependencyContainer the dependency injection container.
+ *
+ * @returns {express.Router} the configured router.
+ */
 function configure(dependencyContainer) {
   const router = express.Router()
 
   router.get('/', (req, res) => {
-    res.send('<p>some html</p>')
+    res.send('Hello chatboard!')
   })
 
-  router.use('/chats', chatsAPI(dependencyContainer.resolve('chatsHandler')))
+  // Chat sub api
+  router.use(
+    '/chats',
+    chatsAPI({ chatController: dependencyContainer.resolve('chatController') }),
+  )
 
   return router
 }

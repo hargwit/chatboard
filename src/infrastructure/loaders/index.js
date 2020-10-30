@@ -1,12 +1,23 @@
 import logger from './logger'
 import server from './server'
-import di from './di'
+import dependencyInjection from './dependencyInjection'
 import router from './router'
 import database from './database'
 
+/**
+ * @param {import("express").Router} app the express application.
+ */
 export default async (app) => {
-  logger(app)
+  // Connect to the database
   await database()
+
+  // Build the dependencies
+  const dependencies = dependencyInjection()
+
+  // Configure the express application
+  logger(app)
   server(app)
-  router(app, di())
+
+  // Load the router
+  router(app, dependencies)
 }

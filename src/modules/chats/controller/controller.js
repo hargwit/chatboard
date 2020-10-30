@@ -1,13 +1,19 @@
 /**
+ * Produces a ChatController.
+ *
  * @param {Object} args
  * @param {import("../app/use-cases").ChatUseCases} args.chatService contains all of the chat use cases
+ *
+ * @returns {import("./controller").ChatController} the chat controller.
  */
-function chatHandler({ chatService }) {
+function chatController({ chatService }) {
   return {
     getAll: (req, res) => {
-      return res.send(chatService.getAll())
+      const chats = chatService.getAll()
+
+      return res.send({ chats })
     },
   }
 }
 
-export { chatHandler }
+export { chatController }
