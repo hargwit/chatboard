@@ -4,4 +4,4 @@ function map<A, B>(transform: (value: A) => B): (array: Array<A>) => Array<B> {
   }
 }
 
-export { map }
+export default map

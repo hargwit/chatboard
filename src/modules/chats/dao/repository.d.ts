@@ -1,5 +1,6 @@
-import { Chats } from '../entities/chat'
+import { Chat } from '../entities/chat'
+import { Read, Update } from '../../common/crud'
 
-export interface ChatRepository {
-  getAll: () => Promise<Chats>
-}
+interface ChatRepository extends Read<Chat>, Update<Chat> {}
+
+export default ChatRepository
