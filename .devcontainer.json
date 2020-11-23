@@ -10,6 +10,5 @@
     "containerEnv": {
         "NODE_ENV": "development",
         "CHOKIDAR_USEPOLLING": "1"
-    },
-    "appPort": [27017]
+    }
 }
