@@ -9,7 +9,7 @@
         "serve": "node dist/index.js",
         "lint": "eslint . --ext .ts --ext .js",
         "format": "eslint . --ext .ts --ext .js --fix && prettier 'src/**/*.{js,json,ts}' --write",
-        "test": "jest",
+        "test": "echo 'No tests yet'",
         "test-watch": "jest --watch"
     },
     "repository": {
