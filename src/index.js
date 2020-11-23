@@ -7,21 +7,26 @@ import loaders from './infrastructure/loaders'
 dotenv.config()
 
 async function startServer() {
-  // Build an express app
-  const app = express()
+    console.log('Starting chatboard')
 
-  // Load the application
-  await loaders(app)
+    // Build an express app
+    const app = express()
 
-  // Start the server
-  app.listen(process.env.PORT, () => {
-    console.log(`
+    // Server starter
+    const listen = () =>
+        app.listen(process.env.PORT, () => {
+            console.log(`
             ###########################################
                    Server listening on port ${process.env.PORT}
             ###########################################
         `)
-  })
+        })
+
+    // Load the application and start it on success
+    loaders(app)
+        .then(listen)
+        .catch((error) => console.log('Failed to load application: ', error))
 }
 
 // Allons-y!
-await startServer()
+startServer()

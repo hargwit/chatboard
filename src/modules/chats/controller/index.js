@@ -1,1 +1,0 @@
-export { chatController } from './controller'

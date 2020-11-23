@@ -1,16 +1,15 @@
 {
-  "name": "chatboard",
-  "image": "node:14.12-buster",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-    "dbaeumer.vscode-eslint", "esbenp.prettier-vscode"
-  ],
-  "forwardPorts": [3000, 3001, 3002],
-  "remoteUser": "node",
-  "containerEnv": {
-    "NODE_ENV": "development",
-    "CHOKIDAR_USEPOLLING": "1"
-  }
+    "name": "chatboard",
+    "image": "node:14.12-buster",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+    "forwardPorts": [3000],
+    "remoteUser": "node",
+    "containerEnv": {
+        "NODE_ENV": "development",
+        "CHOKIDAR_USEPOLLING": "1"
+    },
+    "appPort": [27017]
 }

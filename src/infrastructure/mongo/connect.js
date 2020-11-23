@@ -1,18 +1,12 @@
-import mongoose from 'mongoose'
+import * as inMem from './inmem'
+import * as mongo from './mongo'
 
-const connect = async (uri) => {
-  await mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+export const connect = async ({ uri, useInMem = false }) => {
+    console.log(useInMem)
 
-  mongoose.connection
-    .on('open', () => {
-      console.log('Connected to database')
-    })
-    .on('error', (err) => {
-      console.log(`Database connection error: ${err.message}`)
-    })
+    if (useInMem) {
+        await inMem.connect()
+    } else {
+        await mongo.connect(uri)
+    }
 }
-
-export default { connect }
