@@ -1,9 +1,8 @@
 /**
  * A functional mixin to provide mongo create functionality.
- * Templated by type `T`.
  *
- * @template T The entity the repository is for.
  * @template R The repository being mixed into.
+ * @template T The entity the repository is for.
  *
  * @param {Object} args
  * @param {import('mongoose').Model<T & import('mongoose').Document>} args.model The mongo model.

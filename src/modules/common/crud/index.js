@@ -1,4 +1,4 @@
-export { createMongoMixin, updateMongoMixin } from './mongo'
+export { createMongoMixin, updateMongoMixin, readMongoMixin } from './mongo'
 
 export { Create } from './create'
 export { Update } from './update'

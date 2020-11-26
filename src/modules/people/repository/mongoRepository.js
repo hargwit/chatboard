@@ -1,5 +1,5 @@
 import { pipe } from 'lodash/fp'
-import { createMongoMixin, updateMongoMixin } from '../../common/crud'
+import { createMongoMixin, updateMongoMixin, readMongoMixin } from '../../common/crud'
 import { personFactory } from '../domain'
 
 /**
@@ -12,6 +12,8 @@ import { personFactory } from '../domain'
  */
 export const mongoPersonRepositoryFactory = ({ model }) =>
     pipe(
-        (x) => ({ ...x, ...createMongoMixin({ model, resultMapper: personFactory }) }),
-        (x) => ({ ...x, ...updateMongoMixin({ model, resultMapper: personFactory }) })
+        createMongoMixin({ model, resultMapper: personFactory }),
+        readMongoMixin({ model, resultMapper: personFactory }),
+        updateMongoMixin({ model, resultMapper: personFactory })
+        // @ts-ignore
     )({})
