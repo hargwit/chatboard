@@ -1,7 +1,8 @@
 /**
  * Builds a person.
  *
- * @param {Object} args
- * @param {string} args.id The id of the person.
+ * @param {Partial<import('./people').Person>} personProps The properties of the person.
+ *
+ * @returns {import('./people').Person} The person.
  */
-export const personFactory = ({ id }) => ({ id })
+export const personFactory = ({ id = '', username = '' }) => ({ id, username })
