@@ -9,7 +9,7 @@
  * @param {import('mongoose').Model<T & import('mongoose').Document>} args.model The mongo model.
  * @param {(dto: T & import('mongoose').Document) => T} args.resultMapper A function to map the result from mongo document to `T`.
  *
- * @returns {(repo: R) => R & import('../update').Update<T>} The mixed in repository.
+ * @returns {(repo: R) => R & import('../Update').Update<T>} A function to create the mixed in repository.
  */
 export const updateMongoMixin = ({ model, resultMapper }) => (repo) => ({
     ...repo,

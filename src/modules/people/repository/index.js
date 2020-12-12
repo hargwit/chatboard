@@ -1,3 +1,3 @@
-export { PersonRepository } from './repository'
+export { PersonRepository } from './PersonRepository'
 
-export { mongoPersonRepositoryFactory } from './mongoRepository'
+export { mongoPersonRepositoryFactory } from './mongo'

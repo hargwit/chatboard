@@ -1,6 +1,6 @@
 export { createMongoMixin, updateMongoMixin, readMongoMixin } from './mongo'
 
-export { Create } from './create'
-export { Update } from './update'
-export { Delete } from './delete'
-export { Read } from './read'
+export { Create } from './Create'
+export { Update } from './Update'
+export { Delete } from './Delete'
+export { Read } from './Read'

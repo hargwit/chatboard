@@ -1,14 +1,14 @@
 import { pipe } from 'lodash/fp'
-import { createMongoMixin, updateMongoMixin, readMongoMixin } from '../../common/crud'
-import { personFactory } from '../domain'
+import { createMongoMixin, updateMongoMixin, readMongoMixin } from '../../../common/crud'
+import { personFactory } from '../../domain'
 
 /**
  * A mongo implementation of the `PersonRepository`.
  *
  * @param {Object} args
- * @param {import('mongoose').Model<import('../domain').Person & import('mongoose').Document>} args.model The mongo model for people.
+ * @param {import('mongoose').Model<import('../../domain').Person & import('mongoose').Document>} args.model The mongo model for people.
  *
- * @returns {import('./repository').PersonRepository} The person repository.
+ * @returns {import('../PersonRepository').PersonRepository} The person repository.
  */
 export const mongoPersonRepositoryFactory = ({ model }) =>
     pipe(
